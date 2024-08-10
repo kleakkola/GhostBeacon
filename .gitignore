@@ -1,0 +1,47 @@
+# Sensitive files - DO NOT COMMIT
+github_accounts.csv
+project_description.txt
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+artifacts/
+cache/
+out/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+*.lcov
+
+# Logs
+*.log
+logs/
+
+# Foundry
+broadcast/
+deployments/
+
+# TypeChain
+typechain/
+typechain-types/
+
