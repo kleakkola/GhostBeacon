@@ -137,6 +137,28 @@ contract CampaignRegistry is ICampaignRegistry, Ownable, ReentrancyGuard {
     }
 
     /**
+     * @notice Gets campaign spent amount
+     * @param campaignId Campaign ID
+     * @return uint256 Spent amount
+     */
+    function getCampaignSpent(uint256 campaignId) external view returns (uint256) {
+        return _campaigns[campaignId].spent;
+    }
+
+    /**
+     * @notice Gets campaign remaining budget
+     * @param campaignId Campaign ID
+     * @return uint256 Remaining budget
+     */
+    function getCampaignRemainingBudget(uint256 campaignId) external view returns (uint256) {
+        Campaign memory campaign = _campaigns[campaignId];
+        if (campaign.spent >= campaign.budget) {
+            return 0;
+        }
+        return campaign.budget - campaign.spent;
+    }
+
+    /**
      * @notice Gets total number of campaigns
      * @return uint256 Total campaigns created
      */
