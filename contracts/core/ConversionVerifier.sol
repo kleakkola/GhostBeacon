@@ -19,6 +19,7 @@ contract ConversionVerifier is IConversionVerifier, Ownable {
 
     event NullifierUsed(bytes32 indexed nullifier, uint256 timestamp);
     event CampaignRootUpdated(uint256 indexed campaignId, bytes32 root);
+    event ProofValidated(uint256 indexed campaignId, bytes32 indexed nullifier, bool success);
 
     constructor() Ownable(msg.sender) {}
 
@@ -60,7 +61,11 @@ contract ConversionVerifier is IConversionVerifier, Ownable {
 
         // In production, this would call the actual Groth16/Halo2 verifier
         // For now, we perform basic validation
-        return _verifyProofInternal(proof);
+        bool verified = _verifyProofInternal(proof);
+        
+        emit ProofValidated(campaignId, nullifier, verified);
+        
+        return verified;
     }
 
     /**
