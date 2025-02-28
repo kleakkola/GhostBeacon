@@ -141,6 +141,29 @@ contract TreasuryVault is ITreasuryVault, Ownable, ReentrancyGuard {
     }
 
     /**
+     * @notice Batch deposit to multiple campaigns
+     * @param campaignIds Array of campaign IDs
+     * @param amounts Array of deposit amounts
+     */
+    function batchDeposit(
+        uint256[] memory campaignIds,
+        uint256[] memory amounts
+    ) external payable {
+        require(campaignIds.length == amounts.length, "Length mismatch");
+        
+        uint256 totalRequired = 0;
+        for (uint256 i = 0; i < amounts.length; i++) {
+            totalRequired += amounts[i];
+        }
+        require(msg.value == totalRequired, "Incorrect total amount");
+        
+        for (uint256 i = 0; i < campaignIds.length; i++) {
+            _campaignBalances[campaignIds[i]] += amounts[i];
+            emit Deposited(campaignIds[i], msg.sender, amounts[i]);
+        }
+    }
+
+    /**
      * @notice Fallback to receive ETH
      */
     receive() external payable {
