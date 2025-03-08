@@ -14,6 +14,8 @@ contract AnalyticsAggregator is IAnalyticsAggregator, Ownable {
 
     uint256 public constant DP_NOISE_FACTOR = 5; // Noise percentage for DP
 
+    event CampaignPerformance(uint256 indexed campaignId, uint256 conversionRate, uint256 avgCost);
+
     constructor() Ownable(msg.sender) {}
 
     /**
