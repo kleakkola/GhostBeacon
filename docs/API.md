@@ -272,3 +272,4 @@ event MetricsUpdated(
 - `"Insufficient budget"`: Campaign has insufficient funds
 - `"Not authorized"`: Caller lacks required permissions
 
+## Additional Resources
