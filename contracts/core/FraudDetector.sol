@@ -24,6 +24,8 @@ contract FraudDetector is Ownable {
     uint256 public constant FRAUD_THRESHOLD = 20;
     uint256 public constant TIME_WINDOW = 1 hours;
     uint256 public constant MAX_CONVERSIONS_PER_WINDOW = 10;
+    
+    mapping(address => bool) private _trustedUsers;
 
     event UserScoreUpdated(address indexed user, uint256 newScore);
     event UserBlacklisted(address indexed user);
