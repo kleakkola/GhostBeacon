@@ -20,6 +20,7 @@ contract BillingModule is IBillingModule, Ownable, ReentrancyGuard {
 
     uint256 public constant BASE_COST = 0.001 ether;
     uint256 public constant MAX_WEIGHT = 100;
+    uint256 public constant MIN_WEIGHT = 1;
 
     mapping(uint256 => address) public campaignPublishers;
 
