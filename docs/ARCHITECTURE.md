@@ -161,3 +161,4 @@ All core contracts are modular and can be upgraded independently:
 - ZK-proof verification support
 - Reasonable gas costs
 
+## Performance
