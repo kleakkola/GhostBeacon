@@ -48,6 +48,20 @@ library CampaignLib {
     }
 
     /**
+     * @notice Calculates campaign efficiency score
+     * @param conversions Number of conversions
+     * @param spend Total amount spent
+     * @return uint256 Efficiency score (scaled by 1e18)
+     */
+    function calculateEfficiency(
+        uint256 conversions,
+        uint256 spend
+    ) internal pure returns (uint256) {
+        if (spend == 0) return 0;
+        return (conversions * 1e18) / spend;
+    }
+
+    /**
      * @notice Checks if campaign has sufficient budget
      * @param budget Campaign budget
      * @param spent Already spent amount
