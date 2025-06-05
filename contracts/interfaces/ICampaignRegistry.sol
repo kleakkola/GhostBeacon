@@ -44,5 +44,9 @@ interface ICampaignRegistry {
     function getCampaign(uint256 campaignId) external view returns (Campaign memory);
 
     function isCampaignActive(uint256 campaignId) external view returns (bool);
+
+    function getCampaignSpent(uint256 campaignId) external view returns (uint256);
+
+    function getCampaignRemainingBudget(uint256 campaignId) external view returns (uint256);
 }
 
