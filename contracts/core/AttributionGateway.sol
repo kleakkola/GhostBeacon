@@ -23,6 +23,7 @@ contract AttributionGateway is IAttributionGateway, Ownable, ReentrancyGuard {
     mapping(uint256 => uint256) private _campaignConversionCount;
 
     uint256 public constant DEFAULT_WEIGHT = 1;
+    uint256 public immutable deploymentTime;
 
     event ConversionProcessed(
         uint256 indexed campaignId,
@@ -40,6 +41,7 @@ contract AttributionGateway is IAttributionGateway, Ownable, ReentrancyGuard {
         
         verifier = IConversionVerifier(_verifier);
         campaignRegistry = ICampaignRegistry(_campaignRegistry);
+        deploymentTime = block.timestamp;
     }
 
     /**
