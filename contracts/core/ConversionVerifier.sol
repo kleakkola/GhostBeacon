@@ -16,6 +16,7 @@ contract ConversionVerifier is IConversionVerifier, Ownable {
     mapping(uint256 => bytes32) private _campaignRoots;
 
     uint256 public constant EXPECTED_PUBLIC_INPUTS = 3;
+    uint256 public totalVerifications;
 
     event NullifierUsed(bytes32 indexed nullifier, uint256 timestamp);
     event CampaignRootUpdated(uint256 indexed campaignId, bytes32 root);
@@ -62,6 +63,10 @@ contract ConversionVerifier is IConversionVerifier, Ownable {
         // In production, this would call the actual Groth16/Halo2 verifier
         // For now, we perform basic validation
         bool verified = _verifyProofInternal(proof);
+        
+        if (verified) {
+            totalVerifications++;
+        }
         
         emit ProofValidated(campaignId, nullifier, verified);
         
