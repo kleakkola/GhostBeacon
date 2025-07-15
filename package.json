@@ -1,6 +1,6 @@
 {
   "name": "ghostbeacon",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Zero-Knowledge Ad Attribution & Private Analytics Protocol",
   "main": "index.js",
   "scripts": {
