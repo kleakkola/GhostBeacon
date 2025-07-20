@@ -57,5 +57,15 @@ library ProofVerification {
     ) internal pure returns (bool) {
         return publicInputs.length == expectedLength;
     }
+
+    /**
+     * @notice Checks if value is within valid field
+     * @param value Value to check
+     * @return bool True if valid field element
+     */
+    function isValidFieldElement(uint256 value) internal pure returns (bool) {
+        // BN254 curve order (simplified check)
+        return value < 21888242871839275222246405745257275088548364400416034343698204186575808495617;
+    }
 }
 
