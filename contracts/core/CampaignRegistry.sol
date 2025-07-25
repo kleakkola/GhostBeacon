@@ -33,6 +33,7 @@ contract CampaignRegistry is ICampaignRegistry, Ownable, ReentrancyGuard {
 
     /**
      * @notice Creates a new campaign
+     * @dev Campaign ID starts from 1 and increments sequentially
      * @param budget Campaign budget in wei
      * @param pricingModel Pricing model (0: CPA, 1: CPL, 2: CPI)
      * @param metadataCID IPFS CID for campaign metadata
