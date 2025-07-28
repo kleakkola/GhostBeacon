@@ -45,3 +45,10 @@ deployments/
 typechain/
 typechain-types/
 
+# Flatten
+flattened/
+
+# Temp files
+*.tmp
+temp/
+
