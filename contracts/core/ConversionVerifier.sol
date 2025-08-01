@@ -26,6 +26,7 @@ contract ConversionVerifier is IConversionVerifier, Ownable {
 
     /**
      * @notice Verifies a conversion proof
+     * @dev This function validates the ZK proof structure and checks nullifier uniqueness
      * @param campaignId Campaign ID
      * @param clickHash Hash of click data
      * @param conversionHash Hash of conversion data
