@@ -14,6 +14,8 @@ contract TreasuryVault is ITreasuryVault, Ownable, ReentrancyGuard {
     mapping(address => bool) private _authorizedSpenders;
     
     uint256 public constant TIMELOCK_DURATION = 1 days;
+    uint256 public totalDeposited;
+    uint256 public totalWithdrawn;
     mapping(bytes32 => uint256) private _timelocks;
 
     modifier onlyAuthorized() {
@@ -31,6 +33,7 @@ contract TreasuryVault is ITreasuryVault, Ownable, ReentrancyGuard {
         require(msg.value > 0, "Deposit amount must be > 0");
         
         _campaignBalances[campaignId] += msg.value;
+        totalDeposited += msg.value;
         
         emit Deposited(campaignId, msg.sender, msg.value);
     }
@@ -50,6 +53,8 @@ contract TreasuryVault is ITreasuryVault, Ownable, ReentrancyGuard {
 
         (bool success, ) = recipient.call{value: amount}("");
         require(success, "Transfer failed");
+        
+        totalWithdrawn += amount;
 
         emit Withdrawn(recipient, amount);
     }
