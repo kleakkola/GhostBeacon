@@ -61,6 +61,7 @@ contract TreasuryVault is ITreasuryVault, Ownable, ReentrancyGuard {
 
     /**
      * @notice Processes a payment from campaign balance
+     * @dev Uses nonReentrant modifier to prevent reentrancy attacks
      * @param campaignId Campaign ID
      * @param recipient Recipient address
      * @param amount Amount to pay
