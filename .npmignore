@@ -1,0 +1,19 @@
+# Test files
+test/
+*.test.js
+
+# Documentation
+docs/
+
+# Development
+.github/
+.vscode/
+
+# Sensitive
+github_accounts.csv
+project_description.txt
+
+# Build
+cache/
+artifacts/
+
