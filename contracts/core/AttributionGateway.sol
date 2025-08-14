@@ -46,6 +46,7 @@ contract AttributionGateway is IAttributionGateway, Ownable, ReentrancyGuard {
 
     /**
      * @notice Submits a conversion with ZK proof
+     * @dev Validates campaign status, proof, and processes billing atomically
      * @param campaignId Campaign ID
      * @param clickHash Hash of click data
      * @param conversionHash Hash of conversion data
