@@ -73,7 +73,14 @@ npx hardhat compile
 ### Run Tests
 
 ```bash
+# Run all tests
 npx hardhat test
+
+# Run specific test file
+npx hardhat test test/CampaignRegistry.test.js
+
+# Run with coverage
+npx hardhat coverage
 ```
 
 ### Deploy
