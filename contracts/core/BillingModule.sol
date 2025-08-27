@@ -86,6 +86,7 @@ contract BillingModule is IBillingModule, Ownable, ReentrancyGuard {
 
     /**
      * @notice Calculates conversion fee based on pricing model
+     * @dev Fee calculation varies by pricing model: CPA scales with weight, CPL/CPI fixed
      * @param campaignId Campaign ID
      * @param weight Conversion weight
      * @return uint256 Fee amount
