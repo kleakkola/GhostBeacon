@@ -36,6 +36,7 @@ contract FraudDetector is Ownable {
 
     /**
      * @notice Checks if a user/conversion is fraudulent
+     * @dev Combines reputation score, blacklist status, rate limiting, and device scoring
      * @param user User address
      * @param deviceId Device identifier
      * @return bool True if legitimate
