@@ -20,6 +20,7 @@ contract AnalyticsAggregator is IAnalyticsAggregator, Ownable {
 
     /**
      * @notice Records a conversion for analytics
+     * @dev Updates total conversions, spent amount, and timestamp atomically
      * @param campaignId Campaign ID
      * @param amount Amount spent on conversion
      */
