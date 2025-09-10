@@ -1,6 +1,10 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-/** @type import('hardhat/config').HardhatUserConfig */
+/**
+ * Hardhat configuration for GhostBeacon
+ * Supports Polygon zkEVM and ZKsync Era networks
+ * @type import('hardhat/config').HardhatUserConfig
+ */
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -41,3 +45,4 @@ module.exports = {
     disambiguatePaths: false
   }
 };
+
