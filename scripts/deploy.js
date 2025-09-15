@@ -1,3 +1,8 @@
+/**
+ * GhostBeacon Deployment Script
+ * Deploys all core contracts in correct dependency order
+ * and configures their interconnections
+ */
 const hre = require("hardhat");
 
 async function main() {
