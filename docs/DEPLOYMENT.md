@@ -185,5 +185,3 @@ For deployment support:
 - GitHub Issues
 - Documentation: /docs
 - Discord Community (if available)
-
-## Best Practices

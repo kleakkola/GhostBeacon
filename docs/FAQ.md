@@ -244,5 +244,3 @@ Still have questions?
 ---
 
 Last Updated: February 2025
-
-## Troubleshooting

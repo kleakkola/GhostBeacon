@@ -41,5 +41,3 @@ module.exports = {
     disambiguatePaths: false
   }
 };
-
-Final update

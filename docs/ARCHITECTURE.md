@@ -160,5 +160,3 @@ All core contracts are modular and can be upgraded independently:
 - EVM-compatible
 - ZK-proof verification support
 - Reasonable gas costs
-
-## Performance

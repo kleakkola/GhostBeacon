@@ -271,5 +271,3 @@ event MetricsUpdated(
 - `"Proof verification failed"`: ZK proof is invalid
 - `"Insufficient budget"`: Campaign has insufficient funds
 - `"Not authorized"`: Caller lacks required permissions
-
-## Additional Resources

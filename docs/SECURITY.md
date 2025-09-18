@@ -199,4 +199,3 @@ Always use specific versions, never `^` or `~`:
 
 Last Updated: 2024-11-20
 
-# Security
